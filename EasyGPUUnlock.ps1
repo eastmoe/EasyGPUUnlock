@@ -1,16 +1,25 @@
 ﻿# SPDX-License-Identifier: GPL-2.0-only
 [CmdletBinding()]
 param(
-    [ValidateSet('Menu','Status','Unlock','Restore','EnableTestMode')][string]$Action='Menu',
+    [ValidateSet('Start','Menu','Status','Unlock','Restore','EnableTestMode')][string]$Action='Menu',
     [string]$InstanceId='',
-    [switch]$AllowExperimental
+    [switch]$AllowExperimental,
+    [switch]$Batch
 )
 $ErrorActionPreference='Stop'
 $PSNativeCommandUseErrorActionPreference=$false
-Import-Module (Join-Path $PSScriptRoot 'EguWorkflow.psm1') -Force
 $root=$PSScriptRoot
 $ctl=Join-Path $root 'eguctl.exe'
-if(!(Test-Path -LiteralPath $ctl)) {throw '缺少 eguctl.exe。请先运行 build.ps1，或使用完整发布目录。'}
+$pauseAtExit=[bool]$Batch
+if($Batch -and !$PSBoundParameters.ContainsKey('Action')){$Action='Start'}
+function Get-ElevationArguments {
+    # Start-Process passes one Windows command line; no shell evaluates these values.
+    if($InstanceId -match '["\r\n]'){throw '无效的设备实例参数。'}
+    $arguments='-NoLogo -NoProfile -ExecutionPolicy Bypass -File "'+$PSCommandPath+'" -Batch -Action '+$Action
+    if($InstanceId){$arguments+=' -InstanceId "'+($InstanceId -replace '(\\+)$','$1$1')+'"'}
+    if($AllowExperimental){$arguments+=' -AllowExperimental'}
+    return $arguments
+}
 function Invoke-Ctl([string[]]$Arguments) {
     $err=Join-Path ([IO.Path]::GetTempPath()) ("egu-"+[guid]::NewGuid().ToString('N')+'.err')
     try {
@@ -38,6 +47,20 @@ function Get-Devices {
         } -PassThru
     }
 }
+function Select-UnlockDevice {
+    if($InstanceId){return [pscustomobject]@{InstanceId=$InstanceId;AllowExperimental=[bool]$AllowExperimental}}
+    $choices=@(Get-Devices | Where-Object Supported)
+    if(!$choices.Count){throw '未找到受支持的 RTX 30 / RTX 40 显卡。'}
+    $selection=1
+    if($choices.Count -gt 1 -or $choices[0].Experimental) {
+        Write-Host '标为 Experimental 的型号只具有上游实验支持；选择该行即启用该实例的实验路径。'
+        for($i=0;$i -lt $choices.Count;$i++){Write-Host "$($i+1) $($choices[$i].Name) [$($choices[$i].Architecture) Experimental=$($choices[$i].Experimental)] $($choices[$i].InstanceId)"}
+        $selection=0
+        if(![int]::TryParse((Read-Host '显卡编号（0 取消）'),[ref]$selection) -or $selection -lt 1 -or $selection -gt $choices.Count){throw '已取消或显卡编号无效，未切换驱动。'}
+    }
+    $device=$choices[$selection-1]
+    return [pscustomobject]@{InstanceId=$device.InstanceId;AllowExperimental=([bool]$AllowExperimental -or [bool]$device.Experimental)}
+}
 function Wait-Nv([string]$Id) {
     for($i=0;$i -lt 30;$i++) {
         $d=@(Get-Devices | Where-Object InstanceId -EQ $Id)
@@ -62,7 +85,7 @@ function Verify-Package {
         if(!(Test-Path -LiteralPath $path) -or (Get-Item -LiteralPath $path).Length -ne $entry.Bytes -or
             (Get-FileHash -LiteralPath $path -Algorithm SHA256).Hash -ne $entry.Sha256){throw "文件校验失败：$($entry.Name)"}
     }
-    $required=@('EasyGPUUnlock.sys','EasyGPUUnlock.inf','EasyGPUUnlock.cat','EasyGPUUnlock-test.cer','eguctl.exe','gpu-profiles.json','version.json','signing.json')
+    $required=@('start.bat','EasyGPUUnlock.ps1','EguWorkflow.psm1','EasyGPUUnlock.sys','EasyGPUUnlock.inf','EasyGPUUnlock.cat','EasyGPUUnlock-test.cer','eguctl.exe','gpu-profiles.json','version.json','signing.json')
     # Windows PowerShell 5.1 keeps a JSON root array as one pipeline object.
     $assets=Get-Content (Join-Path $root 'assets.json') -Raw | ConvertFrom-Json
     foreach($asset in $assets){$required+=$asset.Name}
@@ -113,21 +136,27 @@ function Show-Status {
     }
 }
 try {
+    if($Batch) {
+        if(![Environment]::Is64BitProcess -or [Environment]::OSVersion.Version.Build -lt 19041){throw '需要 Windows 10 2004 或更新的 Windows x64。'}
+        $identity=[Security.Principal.WindowsIdentity]::GetCurrent()
+        $principal=New-Object Security.Principal.WindowsPrincipal $identity
+        if($Action -ne 'Status' -and !$principal.IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)) {
+            Write-Host '正在请求管理员权限。'
+            $arguments=Get-ElevationArguments
+            $process=Start-Process -FilePath "$env:SystemRoot\System32\WindowsPowerShell\v1.0\powershell.exe" -ArgumentList $arguments -Verb RunAs -PassThru -Wait
+            $pauseAtExit=$false
+            exit $process.ExitCode
+        }
+    }
+    Import-Module (Join-Path $root 'EguWorkflow.psm1') -Force
+    if(!(Test-Path -LiteralPath $ctl)){throw '缺少 eguctl.exe。请先完整解压 Release 压缩包，再运行 start.bat。'}
+    $selectDevice=($Action -eq 'Start')
+    if($Action -eq 'Start'){Show-Status}
     if($Action -eq 'Menu') {
         Show-Status
         Write-Host '1 解锁并恢复 NV驱动   2 恢复原 NV驱动   3 开启测试模式（需重启）   0 退出'
         switch(Read-Host '选择') {'1'{$Action='Unlock'} '2'{$Action='Restore'} '3'{$Action='EnableTestMode'} default {exit 0}}
-        if($Action -eq 'Unlock') {
-            $choices=@(Get-Devices | Where-Object Supported)
-            if(!$InstanceId -and ($choices.Count -gt 1 -or ($choices.Count -eq 1 -and $choices[0].Experimental))) {
-                Write-Host '标为 Experimental 的型号只具有上游实验支持；选择该行即启用该实例的实验路径。'
-                for($i=0;$i -lt $choices.Count;$i++){Write-Host "$($i+1) $($choices[$i].Name) [$($choices[$i].Architecture) Experimental=$($choices[$i].Experimental)] $($choices[$i].InstanceId)"}
-                $selection=0
-                if(![int]::TryParse((Read-Host '显卡编号'),[ref]$selection) -or $selection -lt 1 -or $selection -gt $choices.Count){throw '无效显卡编号。'}
-                $InstanceId=$choices[$selection-1].InstanceId
-                if($choices[$selection-1].Experimental){$AllowExperimental=$true}
-            }
-        }
+        $selectDevice=($Action -eq 'Unlock')
     }
     if($Action -eq 'Status'){Show-Status;exit 0}
     $environment=Invoke-Ctl @('environment')
@@ -152,9 +181,21 @@ try {
             $acl.AddAccessRule($rule)
         }
         Set-Acl -LiteralPath $data -AclObject $acl
+        if($Action -eq 'Start') {
+            $previous=Read-EguState $statePath
+            if($previous -and $previous.Phase -ne 'Restored') {
+                Write-Host '发现未完成的驱动交接；本次先恢复原 NVIDIA 驱动。'
+                $Action='Restore'
+            } else {$Action='Unlock'}
+        }
         if($Action -eq 'Unlock') {
+            if($selectDevice) {
+                $target=Select-UnlockDevice
+                $InstanceId=$target.InstanceId;$AllowExperimental=$target.AllowExperimental
+            }
             Write-Host '步骤 1/5：检查当前启动的测试模式，校验文件并备份 NVIDIA 驱动。'
             Invoke-EguUnlock -Backend $backend -StatePath $statePath -InstanceId $InstanceId -AllowExperimental:$AllowExperimental | Select-Object Phase,UnlockVerified | Format-List | Out-Host
         } else {Invoke-EguRestore -Backend $backend -StatePath $statePath | Select-Object Phase,InstanceId | Format-List | Out-Host}
     } finally {if($locked){$mutex.ReleaseMutex()};$mutex.Dispose()}
 } catch {Write-Host $_.Exception.Message -ForegroundColor Red;exit 1}
+finally {if($pauseAtExit){Read-Host '按回车键关闭' | Out-Null}}

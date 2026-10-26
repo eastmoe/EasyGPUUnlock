@@ -5,6 +5,8 @@ $ErrorActionPreference='Stop'
 $root=$PSScriptRoot
 & "$env:SystemRoot\System32\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -ExecutionPolicy Bypass -File "$root\tests\workflow.ps1"
 if($LASTEXITCODE){throw 'Workflow tests failed.'}
+& "$env:SystemRoot\System32\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -ExecutionPolicy Bypass -File "$root\tests\start.ps1"
+if($LASTEXITCODE){throw 'Batch entry tests failed.'}
 if(Test-Path -LiteralPath "$root\dist\package.json") {
     & "$env:SystemRoot\System32\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -ExecutionPolicy Bypass -File "$root\tests\package.ps1"
     if($LASTEXITCODE){throw 'Real package gate failed.'}

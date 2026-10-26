@@ -2,7 +2,7 @@
 $ErrorActionPreference='Stop'
 $root=Split-Path $PSScriptRoot
 & "$PSScriptRoot\generate-profiles.ps1"
-foreach($test in 'workflow','profiles') {
+foreach($test in 'workflow','start','profiles') {
     $arguments=@('-NoProfile','-ExecutionPolicy','Bypass','-File',"$root\tests\$test.ps1")
     if($test -eq 'profiles'){$arguments+='-SourceOnly'}
     & "$env:SystemRoot\System32\WindowsPowerShell\v1.0\powershell.exe" @arguments

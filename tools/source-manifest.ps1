@@ -6,7 +6,7 @@ $paths=@(Get-ChildItem -LiteralPath "$root\src","$root\vendor","$root\tools","$r
 if(Test-Path -LiteralPath "$root\.github"){$paths+=@(Get-ChildItem -LiteralPath "$root\.github" -Recurse -File)}
 $paths+=@(Get-ChildItem -LiteralPath $root -File | Where-Object Name -In @(
     'LICENSE','assets.json','supported-ids.json','gpu-profiles.json','version.json','signing.json',
-    'build.ps1','test.ps1','EguWorkflow.psm1','EasyGPUUnlock.ps1','.gitignore','.gitattributes'))
+    'build.ps1','test.ps1','start.bat','EguWorkflow.psm1','EasyGPUUnlock.ps1','.gitignore','.gitattributes'))
 $files=@($paths | Sort-Object FullName | ForEach-Object {
     [ordered]@{Path=$_.FullName.Substring($root.Length+1).Replace('\','/');Sha256=(Get-FileHash -LiteralPath $_.FullName).Hash.ToLowerInvariant()}
 })

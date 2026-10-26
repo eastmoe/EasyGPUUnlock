@@ -37,5 +37,6 @@ static inline int EguProfileAllowsRun(const EGU_GPU_PROFILE *p,unsigned long fla
         (!(p->flags&EGU_PROFILE_EXPERIMENTAL)||(flags&EGU_ALLOW_EXPERIMENTAL));
 }
 '@
-Set-Content -LiteralPath "$root\src\gpu_profiles.h" -Value $header -Encoding ascii
-@($catalog.Profiles.DeviceId) | ConvertTo-Json | Set-Content -LiteralPath "$root\supported-ids.json" -Encoding UTF8
+[IO.File]::WriteAllText("$root\src\gpu_profiles.h",$header.Replace("`r`n","`n")+"`n",[Text.Encoding]::ASCII)
+$ids="[`n"+(($catalog.Profiles.DeviceId | ForEach-Object {'  "'+$_+'"'}) -join ",`n")+"`n]`n"
+[IO.File]::WriteAllText("$root\supported-ids.json",$ids,(New-Object Text.UTF8Encoding $false))

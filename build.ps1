@@ -98,7 +98,7 @@ Device="EasyGPUUnlock Ampere and Ada Experimental Driver"
 Disk="EasyGPUUnlock Driver Package"
 "@
     Set-Content -LiteralPath "$dist\EasyGPUUnlock.inf" -Value $inf -Encoding ascii
-    foreach($name in 'EasyGPUUnlock.ps1','EguWorkflow.psm1','supported-ids.json','gpu-profiles.json','version.json','signing.json','assets.json') {
+    foreach($name in 'start.bat','EasyGPUUnlock.ps1','EguWorkflow.psm1','supported-ids.json','gpu-profiles.json','version.json','signing.json','assets.json') {
         if(Test-Path (Join-Path $root $name)){Copy-Item -LiteralPath (Join-Path $root $name) -Destination $dist -Force}
     }
     New-Item -ItemType Directory -Force -Path "$dist\licenses" | Out-Null

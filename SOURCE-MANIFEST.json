@@ -1,5 +1,5 @@
 {
-  "Version": "0.2.1",
+  "Version": "0.2.2",
   "References": [
     {
       "Name": "gpu-unlock",
@@ -17,7 +17,7 @@
   "Files": [
     {
       "Path": ".gitattributes",
-      "Sha256": "144ae58118d71e00e56c447b98b25f18f8231ecf491646db15f5f2d02d8ce4a5"
+      "Sha256": "bec56b041219c86c32f40134c031bef1d1eede43f4f6269aca3cb97d9f847d40"
     },
     {
       "Path": ".github/workflows/ci.yml",
@@ -33,15 +33,15 @@
     },
     {
       "Path": "build.ps1",
-      "Sha256": "95607752360c8302e3830cdecea1bbf1a7c02c9d7d041fd4fe51fab68bc3d0d0"
+      "Sha256": "4bea1f260b31d2fced6788ae25497cb14b5152e620620c37d6ea153080ab6468"
     },
     {
       "Path": "EasyGPUUnlock.ps1",
-      "Sha256": "e2211248a0faff712f47faa7db9000c487ec1fc8a22406f1e9280744bc3d30ba"
+      "Sha256": "9e7a2df52bd4d0dd18701bbcfc7dee876018b4a2cb5d3a63e3655beab28ebe25"
     },
     {
       "Path": "EguWorkflow.psm1",
-      "Sha256": "82386cebf998e1419281235c8d57c619462a536958ff49b501657419b3ce61db"
+      "Sha256": "3d19b367a1c004945a46feb890234689e691b5de69c32e96915b55926619cf3e"
     },
     {
       "Path": "gpu-profiles.json",
@@ -184,12 +184,16 @@
       "Sha256": "5603b2d6706555f4945593bec6a8c46d30a692be46c6be15012428e52c503f03"
     },
     {
+      "Path": "start.bat",
+      "Sha256": "9a88b9d2cba19a730211b754d273219189d616e2bcb6e3569e959f5f92705506"
+    },
+    {
       "Path": "supported-ids.json",
       "Sha256": "f5a897e2271fe374e0368894bc1d15c98a91bc22ae472973c36ec8637bad4262"
     },
     {
       "Path": "test.ps1",
-      "Sha256": "83e58a61bbd389a3400b259ffbdf2b016dc5c19ac7c6702e0b84ede76a2aec83"
+      "Sha256": "4b5b48a5a42c889094e6fdb64a7316f83ad5a0235b6d63e0d6d666049a6b813b"
     },
     {
       "Path": "tests/ada/test_ad102_kernel.c",
@@ -292,6 +296,10 @@
       "Sha256": "6bc68fe0dea48593a39671628a1bee326267bb2e40b1a2edaef633c7adcf7648"
     },
     {
+      "Path": "tests/start.ps1",
+      "Sha256": "cece8e6a18fbc744e133204be134da723a43e99cdc3c32010f129f992538ce1f"
+    },
+    {
       "Path": "tests/test_gfw_eval.c",
       "Sha256": "72ea1130bdf92746c65e7fc4fe57fc8573ba9ae8ee514b2d714bcfb09ffc2564"
     },
@@ -381,11 +389,11 @@
     },
     {
       "Path": "tools/ci.ps1",
-      "Sha256": "b59e9a3bdbfb66bfc2644104542007f9d177031c2b336c32ffb4294ed82a38e6"
+      "Sha256": "78c09d1d0c1c5927f8c9b83efb9992a6154798426cb4d667e3cb0c100e3e7fd6"
     },
     {
       "Path": "tools/generate-profiles.ps1",
-      "Sha256": "b841d301c99ef0fbf99fe2fc94f49ec5a19eaaee5fd86bfa1d1081702bffca2f"
+      "Sha256": "52129629376f4fb3f41be4d88188896aeadd77f6943a441415d9d7b8c304244c"
     },
     {
       "Path": "tools/package.ps1",
@@ -401,7 +409,7 @@
     },
     {
       "Path": "tools/source-manifest.ps1",
-      "Sha256": "d83ff6c7bd82f9276b0a87e42dd8c3303b61cfdc279f6af9b52ede6372c3543f"
+      "Sha256": "3b0ae0c0e10bdac1c9a99da750c336e774d3b658c7a6bed39f4a9db4825054ed"
     },
     {
       "Path": "tools/test-live.ps1",
@@ -553,7 +561,7 @@
     },
     {
       "Path": "version.json",
-      "Sha256": "ca1091a5191861e250a291fdf90cfa48bfa5f9ff3a374e33ed370cb6245909af"
+      "Sha256": "cd4d530f30ef91c1c30228f29a9845497451fd6c89aeef8a0f8320508e3ffe53"
     }
   ]
 }

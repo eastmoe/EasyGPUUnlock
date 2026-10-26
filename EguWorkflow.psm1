@@ -42,7 +42,7 @@ function Invoke-EguUnlock {
     param([hashtable]$Backend,[string]$StatePath,[string]$InstanceId='',[switch]$AllowExperimental)
     $environment=& $Backend.Environment
     Assert-EguAdmin $environment
-    if(!$environment.CodeIntegrityKnown -or !$environment.TestModeActive){throw '当前启动未处于测试签名模式。先执行 EnableTestMode，重启后再解锁。'}
+    if(!$environment.CodeIntegrityKnown -or !$environment.TestModeActive){throw '当前启动未处于测试签名模式。先运行 start.bat -Action EnableTestMode，重启后再运行 start.bat。'}
     if($environment.HvciActive){throw '内存完整性 / HVCI 正在运行，当前实验驱动不支持此状态。'}
     $boot=& $Backend.BootId
     $previous=Read-EguState $StatePath
