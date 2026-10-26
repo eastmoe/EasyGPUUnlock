@@ -1,0 +1,557 @@
+{
+  "Schema": 1,
+  "Profiles": [
+    {
+      "DeviceId": "2200",
+      "Architecture": "Ampere",
+      "Chip": "GA102",
+      "Model": "GeForce GA102 (2200)",
+      "Experimental": false,
+      "Evidence": "Upstream support; Windows hardware unverified"
+    },
+    {
+      "DeviceId": "2203",
+      "Architecture": "Ampere",
+      "Chip": "GA102",
+      "Model": "RTX 3090 Ti",
+      "Experimental": false,
+      "Evidence": "Upstream support; Windows hardware unverified"
+    },
+    {
+      "DeviceId": "2204",
+      "Architecture": "Ampere",
+      "Chip": "GA102",
+      "Model": "RTX 3090",
+      "Experimental": false,
+      "Evidence": "Upstream support; Windows hardware unverified"
+    },
+    {
+      "DeviceId": "2205",
+      "Architecture": "Ampere",
+      "Chip": "GA102",
+      "Model": "RTX 3080 Ti 20GB OEM",
+      "Experimental": false,
+      "Evidence": "Upstream support; Windows hardware unverified"
+    },
+    {
+      "DeviceId": "2206",
+      "Architecture": "Ampere",
+      "Chip": "GA102",
+      "Model": "RTX 3080 10GB",
+      "Experimental": false,
+      "Evidence": "Windows RTX 3080 validated on 610.88; package 0.1.1"
+    },
+    {
+      "DeviceId": "2207",
+      "Architecture": "Ampere",
+      "Chip": "GA102",
+      "Model": "GeForce GA102 (2207)",
+      "Experimental": false,
+      "Evidence": "Upstream support; Windows hardware unverified"
+    },
+    {
+      "DeviceId": "2208",
+      "Architecture": "Ampere",
+      "Chip": "GA102",
+      "Model": "RTX 3080 Ti",
+      "Experimental": false,
+      "Evidence": "Upstream support; Windows hardware unverified"
+    },
+    {
+      "DeviceId": "220a",
+      "Architecture": "Ampere",
+      "Chip": "GA102",
+      "Model": "RTX 3080 12GB",
+      "Experimental": false,
+      "Evidence": "Upstream support; Windows hardware unverified"
+    },
+    {
+      "DeviceId": "220d",
+      "Architecture": "Ampere",
+      "Chip": "GA102",
+      "Model": "GeForce GA102 (220d)",
+      "Experimental": false,
+      "Evidence": "Upstream support; Windows hardware unverified"
+    },
+    {
+      "DeviceId": "2216",
+      "Architecture": "Ampere",
+      "Chip": "GA102",
+      "Model": "RTX 3080 LHR",
+      "Experimental": false,
+      "Evidence": "Upstream support; Windows hardware unverified"
+    },
+    {
+      "DeviceId": "222b",
+      "Architecture": "Ampere",
+      "Chip": "GA102",
+      "Model": "GeForce GA102 (222b)",
+      "Experimental": false,
+      "Evidence": "Upstream support; Windows hardware unverified"
+    },
+    {
+      "DeviceId": "222f",
+      "Architecture": "Ampere",
+      "Chip": "GA102",
+      "Model": "GeForce GA102 (222f)",
+      "Experimental": false,
+      "Evidence": "Upstream support; Windows hardware unverified"
+    },
+    {
+      "DeviceId": "2480",
+      "Architecture": "Ampere",
+      "Chip": "GA104",
+      "Model": "GeForce GA104 (2480)",
+      "Experimental": false,
+      "Evidence": "Upstream support; Windows hardware unverified"
+    },
+    {
+      "DeviceId": "2482",
+      "Architecture": "Ampere",
+      "Chip": "GA104",
+      "Model": "RTX 3070 Ti",
+      "Experimental": false,
+      "Evidence": "Upstream support; Windows hardware unverified"
+    },
+    {
+      "DeviceId": "2483",
+      "Architecture": "Ampere",
+      "Chip": "GA104",
+      "Model": "GeForce GA104 (2483)",
+      "Experimental": false,
+      "Evidence": "Upstream support; Windows hardware unverified"
+    },
+    {
+      "DeviceId": "2484",
+      "Architecture": "Ampere",
+      "Chip": "GA104",
+      "Model": "RTX 3070",
+      "Experimental": false,
+      "Evidence": "Upstream support; Windows hardware unverified"
+    },
+    {
+      "DeviceId": "2486",
+      "Architecture": "Ampere",
+      "Chip": "GA104",
+      "Model": "RTX 3060 Ti",
+      "Experimental": false,
+      "Evidence": "Upstream support; Windows hardware unverified"
+    },
+    {
+      "DeviceId": "2487",
+      "Architecture": "Ampere",
+      "Chip": "GA104",
+      "Model": "RTX 3060 Ti",
+      "Experimental": false,
+      "Evidence": "Upstream support; Windows hardware unverified"
+    },
+    {
+      "DeviceId": "2488",
+      "Architecture": "Ampere",
+      "Chip": "GA104",
+      "Model": "RTX 3070 LHR",
+      "Experimental": false,
+      "Evidence": "Upstream support; Windows hardware unverified"
+    },
+    {
+      "DeviceId": "2489",
+      "Architecture": "Ampere",
+      "Chip": "GA104",
+      "Model": "RTX 3060 Ti LHR",
+      "Experimental": false,
+      "Evidence": "Upstream support; Windows hardware unverified"
+    },
+    {
+      "DeviceId": "248a",
+      "Architecture": "Ampere",
+      "Chip": "GA104",
+      "Model": "GeForce GA104 (248a)",
+      "Experimental": false,
+      "Evidence": "Upstream support; Windows hardware unverified"
+    },
+    {
+      "DeviceId": "248c",
+      "Architecture": "Ampere",
+      "Chip": "GA104",
+      "Model": "GeForce GA104 (248c)",
+      "Experimental": false,
+      "Evidence": "Upstream support; Windows hardware unverified"
+    },
+    {
+      "DeviceId": "248d",
+      "Architecture": "Ampere",
+      "Chip": "GA104",
+      "Model": "GeForce GA104 (248d)",
+      "Experimental": false,
+      "Evidence": "Upstream support; Windows hardware unverified"
+    },
+    {
+      "DeviceId": "248e",
+      "Architecture": "Ampere",
+      "Chip": "GA104",
+      "Model": "GeForce GA104 (248e)",
+      "Experimental": false,
+      "Evidence": "Upstream support; Windows hardware unverified"
+    },
+    {
+      "DeviceId": "249c",
+      "Architecture": "Ampere",
+      "Chip": "GA104",
+      "Model": "GeForce GA104 (249c)",
+      "Experimental": false,
+      "Evidence": "Upstream support; Windows hardware unverified"
+    },
+    {
+      "DeviceId": "249d",
+      "Architecture": "Ampere",
+      "Chip": "GA104",
+      "Model": "GeForce GA104 (249d)",
+      "Experimental": false,
+      "Evidence": "Upstream support; Windows hardware unverified"
+    },
+    {
+      "DeviceId": "249f",
+      "Architecture": "Ampere",
+      "Chip": "GA104",
+      "Model": "GeForce GA104 (249f)",
+      "Experimental": false,
+      "Evidence": "Upstream support; Windows hardware unverified"
+    },
+    {
+      "DeviceId": "24a0",
+      "Architecture": "Ampere",
+      "Chip": "GA104",
+      "Model": "GeForce GA104 (24a0)",
+      "Experimental": false,
+      "Evidence": "Upstream support; Windows hardware unverified"
+    },
+    {
+      "DeviceId": "24a4",
+      "Architecture": "Ampere",
+      "Chip": "GA104",
+      "Model": "GeForce GA104 (24a4)",
+      "Experimental": false,
+      "Evidence": "Upstream support; Windows hardware unverified"
+    },
+    {
+      "DeviceId": "24ac",
+      "Architecture": "Ampere",
+      "Chip": "GA104",
+      "Model": "GeForce GA104 (24ac)",
+      "Experimental": false,
+      "Evidence": "Upstream support; Windows hardware unverified"
+    },
+    {
+      "DeviceId": "24ad",
+      "Architecture": "Ampere",
+      "Chip": "GA104",
+      "Model": "GeForce GA104 (24ad)",
+      "Experimental": false,
+      "Evidence": "Upstream support; Windows hardware unverified"
+    },
+    {
+      "DeviceId": "24af",
+      "Architecture": "Ampere",
+      "Chip": "GA104",
+      "Model": "GeForce GA104 (24af)",
+      "Experimental": false,
+      "Evidence": "Upstream support; Windows hardware unverified"
+    },
+    {
+      "DeviceId": "24bf",
+      "Architecture": "Ampere",
+      "Chip": "GA104",
+      "Model": "GeForce GA104 (24bf)",
+      "Experimental": false,
+      "Evidence": "Upstream support; Windows hardware unverified"
+    },
+    {
+      "DeviceId": "24c0",
+      "Architecture": "Ampere",
+      "Chip": "GA104",
+      "Model": "GeForce GA104 (24c0)",
+      "Experimental": false,
+      "Evidence": "Upstream support; Windows hardware unverified"
+    },
+    {
+      "DeviceId": "24c7",
+      "Architecture": "Ampere",
+      "Chip": "GA104",
+      "Model": "GeForce GA104 (24c7)",
+      "Experimental": false,
+      "Evidence": "Upstream support; Windows hardware unverified"
+    },
+    {
+      "DeviceId": "24c8",
+      "Architecture": "Ampere",
+      "Chip": "GA104",
+      "Model": "GeForce GA104 (24c8)",
+      "Experimental": false,
+      "Evidence": "Upstream support; Windows hardware unverified"
+    },
+    {
+      "DeviceId": "24c9",
+      "Architecture": "Ampere",
+      "Chip": "GA104",
+      "Model": "GeForce GA104 (24c9)",
+      "Experimental": false,
+      "Evidence": "Upstream support; Windows hardware unverified"
+    },
+    {
+      "DeviceId": "24dc",
+      "Architecture": "Ampere",
+      "Chip": "GA104",
+      "Model": "GeForce GA104 (24dc)",
+      "Experimental": false,
+      "Evidence": "Upstream support; Windows hardware unverified"
+    },
+    {
+      "DeviceId": "24dd",
+      "Architecture": "Ampere",
+      "Chip": "GA104",
+      "Model": "GeForce GA104 (24dd)",
+      "Experimental": false,
+      "Evidence": "Upstream support; Windows hardware unverified"
+    },
+    {
+      "DeviceId": "24df",
+      "Architecture": "Ampere",
+      "Chip": "GA104",
+      "Model": "GeForce GA104 (24df)",
+      "Experimental": false,
+      "Evidence": "Upstream support; Windows hardware unverified"
+    },
+    {
+      "DeviceId": "24e0",
+      "Architecture": "Ampere",
+      "Chip": "GA104",
+      "Model": "GeForce GA104 (24e0)",
+      "Experimental": false,
+      "Evidence": "Upstream support; Windows hardware unverified"
+    },
+    {
+      "DeviceId": "2414",
+      "Architecture": "Ampere",
+      "Chip": "GA103",
+      "Model": "GeForce GA103 (2414)",
+      "Experimental": false,
+      "Evidence": "Upstream support; Windows hardware unverified"
+    },
+    {
+      "DeviceId": "2501",
+      "Architecture": "Ampere",
+      "Chip": "GA106",
+      "Model": "GeForce GA106 (2501)",
+      "Experimental": false,
+      "Evidence": "Upstream support; Windows hardware unverified"
+    },
+    {
+      "DeviceId": "2503",
+      "Architecture": "Ampere",
+      "Chip": "GA106",
+      "Model": "RTX 3060",
+      "Experimental": false,
+      "Evidence": "Upstream support; Windows hardware unverified"
+    },
+    {
+      "DeviceId": "2504",
+      "Architecture": "Ampere",
+      "Chip": "GA106",
+      "Model": "RTX 3060 12GB",
+      "Experimental": false,
+      "Evidence": "Upstream support; Windows hardware unverified"
+    },
+    {
+      "DeviceId": "2505",
+      "Architecture": "Ampere",
+      "Chip": "GA106",
+      "Model": "GeForce GA106 (2505)",
+      "Experimental": false,
+      "Evidence": "Upstream support; Windows hardware unverified"
+    },
+    {
+      "DeviceId": "2507",
+      "Architecture": "Ampere",
+      "Chip": "GA106",
+      "Model": "RTX 3050 8GB",
+      "Experimental": false,
+      "Evidence": "Upstream support; Windows hardware unverified"
+    },
+    {
+      "DeviceId": "2508",
+      "Architecture": "Ampere",
+      "Chip": "GA106",
+      "Model": "RTX 3050 OEM",
+      "Experimental": false,
+      "Evidence": "Upstream support; Windows hardware unverified"
+    },
+    {
+      "DeviceId": "2509",
+      "Architecture": "Ampere",
+      "Chip": "GA106",
+      "Model": "GeForce GA106 (2509)",
+      "Experimental": false,
+      "Evidence": "Upstream support; Windows hardware unverified"
+    },
+    {
+      "DeviceId": "252f",
+      "Architecture": "Ampere",
+      "Chip": "GA106",
+      "Model": "GeForce GA106 (252f)",
+      "Experimental": false,
+      "Evidence": "Upstream support; Windows hardware unverified"
+    },
+    {
+      "DeviceId": "2544",
+      "Architecture": "Ampere",
+      "Chip": "GA106",
+      "Model": "GeForce GA106 (2544)",
+      "Experimental": false,
+      "Evidence": "Upstream support; Windows hardware unverified"
+    },
+    {
+      "DeviceId": "2584",
+      "Architecture": "Ampere",
+      "Chip": "GA107",
+      "Model": "RTX 3050 6GB",
+      "Experimental": false,
+      "Evidence": "Upstream support; Windows hardware unverified"
+    },
+    {
+      "DeviceId": "2684",
+      "Architecture": "Ada",
+      "Chip": "AD102",
+      "Model": "RTX 4090",
+      "Experimental": false,
+      "Evidence": "gpu-unlock-ada upstream reports; Windows hardware unverified"
+    },
+    {
+      "DeviceId": "2685",
+      "Architecture": "Ada",
+      "Chip": "AD102",
+      "Model": "RTX 4090 D",
+      "Experimental": true,
+      "Evidence": "gpu-unlock-ada upstream reports; Windows hardware unverified"
+    },
+    {
+      "DeviceId": "2689",
+      "Architecture": "Ada",
+      "Chip": "AD102",
+      "Model": "RTX 4070 Ti SUPER",
+      "Experimental": true,
+      "Evidence": "gpu-unlock-ada upstream reports; Windows hardware unverified"
+    },
+    {
+      "DeviceId": "2702",
+      "Architecture": "Ada",
+      "Chip": "AD103",
+      "Model": "RTX 4080 SUPER",
+      "Experimental": true,
+      "Evidence": "gpu-unlock-ada upstream reports; Windows hardware unverified"
+    },
+    {
+      "DeviceId": "2704",
+      "Architecture": "Ada",
+      "Chip": "AD103",
+      "Model": "RTX 4080",
+      "Experimental": true,
+      "Evidence": "gpu-unlock-ada upstream reports; Windows hardware unverified"
+    },
+    {
+      "DeviceId": "2705",
+      "Architecture": "Ada",
+      "Chip": "AD103",
+      "Model": "RTX 4070 Ti SUPER",
+      "Experimental": true,
+      "Evidence": "gpu-unlock-ada upstream reports; Windows hardware unverified"
+    },
+    {
+      "DeviceId": "2709",
+      "Architecture": "Ada",
+      "Chip": "AD103",
+      "Model": "RTX 4070",
+      "Experimental": true,
+      "Evidence": "gpu-unlock-ada upstream reports; Windows hardware unverified"
+    },
+    {
+      "DeviceId": "2757",
+      "Architecture": "Ada",
+      "Chip": "AD103M",
+      "Model": "RTX 4090 Laptop",
+      "Experimental": true,
+      "Evidence": "gpu-unlock-ada upstream reports; Windows hardware unverified"
+    },
+    {
+      "DeviceId": "2782",
+      "Architecture": "Ada",
+      "Chip": "AD104",
+      "Model": "RTX 4070 Ti",
+      "Experimental": true,
+      "Evidence": "gpu-unlock-ada upstream reports; Windows hardware unverified"
+    },
+    {
+      "DeviceId": "2783",
+      "Architecture": "Ada",
+      "Chip": "AD104",
+      "Model": "RTX 4070 SUPER",
+      "Experimental": true,
+      "Evidence": "gpu-unlock-ada upstream reports; Windows hardware unverified"
+    },
+    {
+      "DeviceId": "2786",
+      "Architecture": "Ada",
+      "Chip": "AD104",
+      "Model": "RTX 4070",
+      "Experimental": true,
+      "Evidence": "gpu-unlock-ada upstream reports; Windows hardware unverified"
+    },
+    {
+      "DeviceId": "2803",
+      "Architecture": "Ada",
+      "Chip": "AD106",
+      "Model": "RTX 4060 Ti",
+      "Experimental": true,
+      "Evidence": "gpu-unlock-ada upstream reports; Windows hardware unverified"
+    },
+    {
+      "DeviceId": "2805",
+      "Architecture": "Ada",
+      "Chip": "AD106",
+      "Model": "RTX 4060 Ti 16GB",
+      "Experimental": true,
+      "Evidence": "gpu-unlock-ada upstream reports; Windows hardware unverified"
+    },
+    {
+      "DeviceId": "2882",
+      "Architecture": "Ada",
+      "Chip": "AD107",
+      "Model": "RTX 4060",
+      "Experimental": true,
+      "Evidence": "gpu-unlock-ada upstream reports; Windows hardware unverified"
+    },
+    {
+      "DeviceId": "28a0",
+      "Architecture": "Ada",
+      "Chip": "AD107",
+      "Model": "RTX 4060 Laptop",
+      "Experimental": true,
+      "Evidence": "gpu-unlock-ada upstream reports; Windows hardware unverified"
+    },
+    {
+      "DeviceId": "28e0",
+      "Architecture": "Ada",
+      "Chip": "AD107",
+      "Model": "RTX 4060 Laptop",
+      "Experimental": true,
+      "Evidence": "gpu-unlock-ada upstream reports; Windows hardware unverified"
+    },
+    {
+      "DeviceId": "28e1",
+      "Architecture": "Ada",
+      "Chip": "AD107",
+      "Model": "RTX 4050 Laptop",
+      "Experimental": true,
+      "Evidence": "gpu-unlock-ada upstream reports; Windows hardware unverified"
+    }
+  ]
+}

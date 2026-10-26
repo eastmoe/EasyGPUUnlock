@@ -1,0 +1,559 @@
+{
+  "Version": "0.2.1",
+  "References": [
+    {
+      "Name": "gpu-unlock",
+      "Revision": "af28cbbfd3d922a659227ecfb7369adfd924cf03"
+    },
+    {
+      "Name": "gpu-unlock-ada",
+      "Revision": "d28c485418c3d9d034cd4bac19200bc33dd3453b"
+    },
+    {
+      "Name": "cmp170hx-windows-driver",
+      "Revision": "a7a8b794d0caf8d543db68dcb744b051f996124f"
+    }
+  ],
+  "Files": [
+    {
+      "Path": ".gitattributes",
+      "Sha256": "144ae58118d71e00e56c447b98b25f18f8231ecf491646db15f5f2d02d8ce4a5"
+    },
+    {
+      "Path": ".github/workflows/ci.yml",
+      "Sha256": "184db1d363254a9853c3c7b63bcb5288008b31a9accb8bb51f882bf4c6311e83"
+    },
+    {
+      "Path": ".gitignore",
+      "Sha256": "54c782d8cacb7edc8c35d5b5521e2e2efa9d044f6d397d1cce5cd53db79b0b88"
+    },
+    {
+      "Path": "assets.json",
+      "Sha256": "ac23ff74bad7cd41c9e63a45e30c8203d80d09bf039995fa1b0dd66ccf878d30"
+    },
+    {
+      "Path": "build.ps1",
+      "Sha256": "95607752360c8302e3830cdecea1bbf1a7c02c9d7d041fd4fe51fab68bc3d0d0"
+    },
+    {
+      "Path": "EasyGPUUnlock.ps1",
+      "Sha256": "e2211248a0faff712f47faa7db9000c487ec1fc8a22406f1e9280744bc3d30ba"
+    },
+    {
+      "Path": "EguWorkflow.psm1",
+      "Sha256": "82386cebf998e1419281235c8d57c619462a536958ff49b501657419b3ce61db"
+    },
+    {
+      "Path": "gpu-profiles.json",
+      "Sha256": "6368ca5566cea09c98b16e4a7c0fa07baeebd9f097f8b5d9de2c6bd63c595826"
+    },
+    {
+      "Path": "LICENSE",
+      "Sha256": "8177f97513213526df2cf6184d8ff986c675afb514d4e68a404010521b880643"
+    },
+    {
+      "Path": "licenses/ADA-FIRMWARE-NOTICE.txt",
+      "Sha256": "ba51777dff822efa09e6f924cf702e7de47fe2a14101cca3573ad3db35445797"
+    },
+    {
+      "Path": "licenses/CMP40HX-MIT.txt",
+      "Sha256": "75054b6a08e1008c86b6045ab99add2c8fa571987880951a9929f11ee56a7d64"
+    },
+    {
+      "Path": "licenses/FIRMWARE-NOTICE.txt",
+      "Sha256": "56c8d56ca47d705de6c68a62630d42115040ab47f94fb93ca37ba74a428cb875"
+    },
+    {
+      "Path": "licenses/GPL-2.0.txt",
+      "Sha256": "8177f97513213526df2cf6184d8ff986c675afb514d4e68a404010521b880643"
+    },
+    {
+      "Path": "licenses/NVIDIA-MIT.txt",
+      "Sha256": "fdeba0dc20cc705443771b5ca293292e3437abb2bb3021b6a0c65f0203b1db91"
+    },
+    {
+      "Path": "licenses/THIRD_PARTY-NOTICES.txt",
+      "Sha256": "fc451d26e01abadfc919d2950d7503c9fcf1cf709cfdfffcea9cfe3ccfaed833"
+    },
+    {
+      "Path": "licenses/Windows-GPU-UNLOCK.txt",
+      "Sha256": "8177f97513213526df2cf6184d8ff986c675afb514d4e68a404010521b880643"
+    },
+    {
+      "Path": "signing.json",
+      "Sha256": "46a104e96cc706c14d8164d9e70e00f9b7a49b158865874e0a56f88cf59168f0"
+    },
+    {
+      "Path": "src/ada_namespace.h",
+      "Sha256": "8a5f8560b6f54f4df78c22f630140c6aac368c8eb83189ba0a3f06d235bf4ab8"
+    },
+    {
+      "Path": "src/compat/compat.h",
+      "Sha256": "e3afea4d3b3dff89d740ce1fc5ceb1b7d125443d24927c38392a56768a089e68"
+    },
+    {
+      "Path": "src/compat/crypto/sha2.h",
+      "Sha256": "01a365a6cf16e713a410099d7ec868cf6e49829629a2c25e4181164b8c053f2b"
+    },
+    {
+      "Path": "src/compat/linux/aperture.h",
+      "Sha256": "3ec7a52eea3bf555060abb3763607aee0a79846807fe071a6e8345e1a6e57d2d"
+    },
+    {
+      "Path": "src/compat/linux/delay.h",
+      "Sha256": "3ec7a52eea3bf555060abb3763607aee0a79846807fe071a6e8345e1a6e57d2d"
+    },
+    {
+      "Path": "src/compat/linux/dma-mapping.h",
+      "Sha256": "3ec7a52eea3bf555060abb3763607aee0a79846807fe071a6e8345e1a6e57d2d"
+    },
+    {
+      "Path": "src/compat/linux/errno.h",
+      "Sha256": "3ec7a52eea3bf555060abb3763607aee0a79846807fe071a6e8345e1a6e57d2d"
+    },
+    {
+      "Path": "src/compat/linux/firmware.h",
+      "Sha256": "3ec7a52eea3bf555060abb3763607aee0a79846807fe071a6e8345e1a6e57d2d"
+    },
+    {
+      "Path": "src/compat/linux/io.h",
+      "Sha256": "3ec7a52eea3bf555060abb3763607aee0a79846807fe071a6e8345e1a6e57d2d"
+    },
+    {
+      "Path": "src/compat/linux/module.h",
+      "Sha256": "3ec7a52eea3bf555060abb3763607aee0a79846807fe071a6e8345e1a6e57d2d"
+    },
+    {
+      "Path": "src/compat/linux/pci.h",
+      "Sha256": "3ec7a52eea3bf555060abb3763607aee0a79846807fe071a6e8345e1a6e57d2d"
+    },
+    {
+      "Path": "src/compat/linux/printk.h",
+      "Sha256": "3ec7a52eea3bf555060abb3763607aee0a79846807fe071a6e8345e1a6e57d2d"
+    },
+    {
+      "Path": "src/compat/linux/slab.h",
+      "Sha256": "3ec7a52eea3bf555060abb3763607aee0a79846807fe071a6e8345e1a6e57d2d"
+    },
+    {
+      "Path": "src/compat/linux/string.h",
+      "Sha256": "3ec7a52eea3bf555060abb3763607aee0a79846807fe071a6e8345e1a6e57d2d"
+    },
+    {
+      "Path": "src/compat/linux/timekeeping.h",
+      "Sha256": "3ec7a52eea3bf555060abb3763607aee0a79846807fe071a6e8345e1a6e57d2d"
+    },
+    {
+      "Path": "src/compat/linux/types.h",
+      "Sha256": "3ec7a52eea3bf555060abb3763607aee0a79846807fe071a6e8345e1a6e57d2d"
+    },
+    {
+      "Path": "src/ctl.cpp",
+      "Sha256": "b78e68424caffe2c91d38e32e562e3f90673fdbfe05080941d8335da4eea2aa6"
+    },
+    {
+      "Path": "src/driver.c",
+      "Sha256": "3fd229c7ce59d07aa33d5cce520cad0ea1c954caac74c3dbaf2102ecea733805"
+    },
+    {
+      "Path": "src/gpu_profiles.h",
+      "Sha256": "3de34cfdfc14eb6c28b74e2afc77adb259a15bb9e24046db3e78f2f8df6fc1b2"
+    },
+    {
+      "Path": "src/launcher.cpp",
+      "Sha256": "9b89bd7c3875b05dbc7062976543a6c5e7c98407efa294edb3930ff02de7c2a2"
+    },
+    {
+      "Path": "src/platform.c",
+      "Sha256": "5c18d8d7fac3eb234489fa25b8728eca82ccc6105c2ef4b696f39d968b381400"
+    },
+    {
+      "Path": "src/platform.h",
+      "Sha256": "430b1ba62991a05ac5e715f4677716c34b966ab16ffa85eeca908c9372b243e5"
+    },
+    {
+      "Path": "src/protocol.h",
+      "Sha256": "da6f4a3be828579200f8eaa5a66c99e81c92e7e32ee903bd77aef189b6d48bf8"
+    },
+    {
+      "Path": "src/sha256.c",
+      "Sha256": "5b707487e2aef3e582d689e36e1650b7f017180991c841dcd0cc2d115cdda567"
+    },
+    {
+      "Path": "src/sha256.h",
+      "Sha256": "5603b2d6706555f4945593bec6a8c46d30a692be46c6be15012428e52c503f03"
+    },
+    {
+      "Path": "supported-ids.json",
+      "Sha256": "f5a897e2271fe374e0368894bc1d15c98a91bc22ae472973c36ec8637bad4262"
+    },
+    {
+      "Path": "test.ps1",
+      "Sha256": "83e58a61bbd389a3400b259ffbdf2b016dc5c19ac7c6702e0b84ede76a2aec83"
+    },
+    {
+      "Path": "tests/ada/test_ad102_kernel.c",
+      "Sha256": "f6fc9dcf17bd337c360209b79f0af41258be1a50e4483d63f54077cc60c42f59"
+    },
+    {
+      "Path": "tests/ada/test_gfw_eval.c",
+      "Sha256": "72ea1130bdf92746c65e7fc4fe57fc8573ba9ae8ee514b2d714bcfb09ffc2564"
+    },
+    {
+      "Path": "tests/ada/test_layout_610.c",
+      "Sha256": "24d2552dc620cad4f8daf1840168eb07b65e61ca16e63b389296803f00dd802f"
+    },
+    {
+      "Path": "tests/ada/test_prep_610.c",
+      "Sha256": "5fb7b43b14dbb38f48b9cce58c068556a1180c9a18ec4289cf19f9a6ea6cca04"
+    },
+    {
+      "Path": "tests/ada/test_unlock_adapter.c",
+      "Sha256": "810b38773bbd9a973492f0215b80475d64c9b3bb304048d7bf2e37e71554f111"
+    },
+    {
+      "Path": "tests/ada/test_vbios_610.c",
+      "Sha256": "6e403b695de84b14f3f4cb112bd9798104fd5fe3e31b46c3018380e2a7b6825d"
+    },
+    {
+      "Path": "tests/ada/unlock_shim/compat.h",
+      "Sha256": "fb9e85416692877ca834a9f8ec9c0973258feba6a1addacbaf37efd1a4927e8e"
+    },
+    {
+      "Path": "tests/ada/unlock_shim/crypto/sha2.h",
+      "Sha256": "a0feb61174d1fa45a5c928c766c0c68225e8e10fb7ca02460a2bcb9db9077ccd"
+    },
+    {
+      "Path": "tests/ada/unlock_shim/linux/aperture.h",
+      "Sha256": "47c42b50b3ad856e9799d47d5fbb63aecdea759d8ae640162f3bbe2bf324037b"
+    },
+    {
+      "Path": "tests/ada/unlock_shim/linux/delay.h",
+      "Sha256": "47c42b50b3ad856e9799d47d5fbb63aecdea759d8ae640162f3bbe2bf324037b"
+    },
+    {
+      "Path": "tests/ada/unlock_shim/linux/dma-mapping.h",
+      "Sha256": "47c42b50b3ad856e9799d47d5fbb63aecdea759d8ae640162f3bbe2bf324037b"
+    },
+    {
+      "Path": "tests/ada/unlock_shim/linux/errno.h",
+      "Sha256": "3ec7a52eea3bf555060abb3763607aee0a79846807fe071a6e8345e1a6e57d2d"
+    },
+    {
+      "Path": "tests/ada/unlock_shim/linux/firmware.h",
+      "Sha256": "47c42b50b3ad856e9799d47d5fbb63aecdea759d8ae640162f3bbe2bf324037b"
+    },
+    {
+      "Path": "tests/ada/unlock_shim/linux/io.h",
+      "Sha256": "47c42b50b3ad856e9799d47d5fbb63aecdea759d8ae640162f3bbe2bf324037b"
+    },
+    {
+      "Path": "tests/ada/unlock_shim/linux/module.h",
+      "Sha256": "47c42b50b3ad856e9799d47d5fbb63aecdea759d8ae640162f3bbe2bf324037b"
+    },
+    {
+      "Path": "tests/ada/unlock_shim/linux/pci.h",
+      "Sha256": "47c42b50b3ad856e9799d47d5fbb63aecdea759d8ae640162f3bbe2bf324037b"
+    },
+    {
+      "Path": "tests/ada/unlock_shim/linux/printk.h",
+      "Sha256": "324fdbd484a6065a56bd08f306e2d932e4bd496e1b1ca41bb8ddd5c999a52661"
+    },
+    {
+      "Path": "tests/ada/unlock_shim/linux/slab.h",
+      "Sha256": "47c42b50b3ad856e9799d47d5fbb63aecdea759d8ae640162f3bbe2bf324037b"
+    },
+    {
+      "Path": "tests/ada/unlock_shim/linux/string.h",
+      "Sha256": "3ec7a52eea3bf555060abb3763607aee0a79846807fe071a6e8345e1a6e57d2d"
+    },
+    {
+      "Path": "tests/ada/unlock_shim/linux/timekeeping.h",
+      "Sha256": "47c42b50b3ad856e9799d47d5fbb63aecdea759d8ae640162f3bbe2bf324037b"
+    },
+    {
+      "Path": "tests/ada/unlock_shim/linux/types.h",
+      "Sha256": "47c42b50b3ad856e9799d47d5fbb63aecdea759d8ae640162f3bbe2bf324037b"
+    },
+    {
+      "Path": "tests/ada/vbios_fixture.h",
+      "Sha256": "d4d46f43cfb85678fc808774603ea71315a2fe698212ca9e43f3d3c0ab190a7d"
+    },
+    {
+      "Path": "tests/package.ps1",
+      "Sha256": "2a4a965a5e2c632220519d7fdcfc820332b91b0796716794beb0d391f4fb53b0"
+    },
+    {
+      "Path": "tests/profiles.ps1",
+      "Sha256": "8de60c91e9a55338bbaf986ba3bbb209db85bd6fe5e17f6d5d7a930a50f8977d"
+    },
+    {
+      "Path": "tests/signing.ps1",
+      "Sha256": "6bc68fe0dea48593a39671628a1bee326267bb2e40b1a2edaef633c7adcf7648"
+    },
+    {
+      "Path": "tests/test_gfw_eval.c",
+      "Sha256": "72ea1130bdf92746c65e7fc4fe57fc8573ba9ae8ee514b2d714bcfb09ffc2564"
+    },
+    {
+      "Path": "tests/test_layout_610.c",
+      "Sha256": "24d2552dc620cad4f8daf1840168eb07b65e61ca16e63b389296803f00dd802f"
+    },
+    {
+      "Path": "tests/test_prep_610.c",
+      "Sha256": "6b4d55aac6357e7f55c77ef5e42aff76a510f3df62f6a0881ee98cdeaa882b92"
+    },
+    {
+      "Path": "tests/test_profiles.c",
+      "Sha256": "902255ef89d62bb5067ccaeb2d3f365997c50afb1958bd0b5a4e2dafd9cdaf5e"
+    },
+    {
+      "Path": "tests/test_unlock_adapter.c",
+      "Sha256": "f7ec643f10a73459463e8f53828c020a9c5a25cb2ae9f62b3b207066cd02fec1"
+    },
+    {
+      "Path": "tests/test_vbios_610.c",
+      "Sha256": "6e403b695de84b14f3f4cb112bd9798104fd5fe3e31b46c3018380e2a7b6825d"
+    },
+    {
+      "Path": "tests/unlock_shim/compat.h",
+      "Sha256": "8a30157deb604a896f2f6c9fe6cd2d31d16509456c68c7b7672afc58d94b6eb9"
+    },
+    {
+      "Path": "tests/unlock_shim/linux/aperture.h",
+      "Sha256": "47c42b50b3ad856e9799d47d5fbb63aecdea759d8ae640162f3bbe2bf324037b"
+    },
+    {
+      "Path": "tests/unlock_shim/linux/delay.h",
+      "Sha256": "47c42b50b3ad856e9799d47d5fbb63aecdea759d8ae640162f3bbe2bf324037b"
+    },
+    {
+      "Path": "tests/unlock_shim/linux/dma-mapping.h",
+      "Sha256": "47c42b50b3ad856e9799d47d5fbb63aecdea759d8ae640162f3bbe2bf324037b"
+    },
+    {
+      "Path": "tests/unlock_shim/linux/errno.h",
+      "Sha256": "3ec7a52eea3bf555060abb3763607aee0a79846807fe071a6e8345e1a6e57d2d"
+    },
+    {
+      "Path": "tests/unlock_shim/linux/firmware.h",
+      "Sha256": "47c42b50b3ad856e9799d47d5fbb63aecdea759d8ae640162f3bbe2bf324037b"
+    },
+    {
+      "Path": "tests/unlock_shim/linux/io.h",
+      "Sha256": "47c42b50b3ad856e9799d47d5fbb63aecdea759d8ae640162f3bbe2bf324037b"
+    },
+    {
+      "Path": "tests/unlock_shim/linux/module.h",
+      "Sha256": "47c42b50b3ad856e9799d47d5fbb63aecdea759d8ae640162f3bbe2bf324037b"
+    },
+    {
+      "Path": "tests/unlock_shim/linux/pci.h",
+      "Sha256": "47c42b50b3ad856e9799d47d5fbb63aecdea759d8ae640162f3bbe2bf324037b"
+    },
+    {
+      "Path": "tests/unlock_shim/linux/printk.h",
+      "Sha256": "324fdbd484a6065a56bd08f306e2d932e4bd496e1b1ca41bb8ddd5c999a52661"
+    },
+    {
+      "Path": "tests/unlock_shim/linux/slab.h",
+      "Sha256": "47c42b50b3ad856e9799d47d5fbb63aecdea759d8ae640162f3bbe2bf324037b"
+    },
+    {
+      "Path": "tests/unlock_shim/linux/string.h",
+      "Sha256": "3ec7a52eea3bf555060abb3763607aee0a79846807fe071a6e8345e1a6e57d2d"
+    },
+    {
+      "Path": "tests/unlock_shim/linux/timekeeping.h",
+      "Sha256": "47c42b50b3ad856e9799d47d5fbb63aecdea759d8ae640162f3bbe2bf324037b"
+    },
+    {
+      "Path": "tests/unlock_shim/linux/types.h",
+      "Sha256": "47c42b50b3ad856e9799d47d5fbb63aecdea759d8ae640162f3bbe2bf324037b"
+    },
+    {
+      "Path": "tests/vbios_fixture.h",
+      "Sha256": "d4d46f43cfb85678fc808774603ea71315a2fe698212ca9e43f3d3c0ab190a7d"
+    },
+    {
+      "Path": "tests/workflow.ps1",
+      "Sha256": "c4f0d942113189d762a0d948329041b84a4b8cd5b45ecafe1b7c3dabcdaa8832"
+    },
+    {
+      "Path": "tools/ci.ps1",
+      "Sha256": "b59e9a3bdbfb66bfc2644104542007f9d177031c2b336c32ffb4294ed82a38e6"
+    },
+    {
+      "Path": "tools/generate-profiles.ps1",
+      "Sha256": "b841d301c99ef0fbf99fe2fc94f49ec5a19eaaee5fd86bfa1d1081702bffca2f"
+    },
+    {
+      "Path": "tools/package.ps1",
+      "Sha256": "bdaca3f2323fc68d15fe81fe0dca609f18fbb564edef3d061dff07ae75d97f47"
+    },
+    {
+      "Path": "tools/prepare-assets.py",
+      "Sha256": "aaf2a80fa3ed0e18806b986f6c94249e33333fa03549c260d8bba65849d9c4f3"
+    },
+    {
+      "Path": "tools/sign.ps1",
+      "Sha256": "94aaceeefef98ca33363d67dde8a70a2c5b801c397670d640009c87b803adfda"
+    },
+    {
+      "Path": "tools/source-manifest.ps1",
+      "Sha256": "d83ff6c7bd82f9276b0a87e42dd8c3303b61cfdc279f6af9b52ede6372c3543f"
+    },
+    {
+      "Path": "tools/test-live.ps1",
+      "Sha256": "63e4f1a68d133e6c27708b1fd78841f12e5ac02bc20f5ddd1f270b72a042ddd8"
+    },
+    {
+      "Path": "vendor/ada-firmware-tools/ada-610.43.03.json",
+      "Sha256": "a856a4ad8accfd5d2220d9604f90e7299eda89426503da213c968a05fc0d0c18"
+    },
+    {
+      "Path": "vendor/ada-firmware-tools/artifacts-610.43.03.json",
+      "Sha256": "d4b5921296df40a60921460e53c635f469356346da15cbfa0569b7b5b86d524e"
+    },
+    {
+      "Path": "vendor/ada-firmware-tools/decode_debug_booter.py",
+      "Sha256": "1e5e8e32933d4c7c34a767da7295b3b314cd7b80b09f872a980fbde09e8c4705"
+    },
+    {
+      "Path": "vendor/ada-firmware-tools/extract_boot_assets.py",
+      "Sha256": "fd1572d5a94d651b0834256917953e0bac90d0a20626c87271535ddf4de6d2ce"
+    },
+    {
+      "Path": "vendor/ada-firmware-tools/fetch_artifacts.py",
+      "Sha256": "f59f1a0ddde298e0e1b29ac128c5f1bbb353f25111e195f63870d9a7ad846ec0"
+    },
+    {
+      "Path": "vendor/ada-firmware-tools/generate_v67.py",
+      "Sha256": "d39fa34f2da9854316d64116ea13a92fe087f1121d7862dda85ed4d1841d920d"
+    },
+    {
+      "Path": "vendor/firmware-tools/artifacts-610.43.03.json",
+      "Sha256": "766be4acb90a9ce2448adc3eb4cead81ea142e96b614f30bde1600b74fe5a4bc"
+    },
+    {
+      "Path": "vendor/firmware-tools/extract_boot_assets.py",
+      "Sha256": "7acc5f488cd35700c499bc942a07e7d0d9b0822b1e2ad040cd34bacf99fa5986"
+    },
+    {
+      "Path": "vendor/firmware-tools/fetch_artifacts.py",
+      "Sha256": "5655e3e497b16e17e3a9c307cf733ef2207cd7a3d0be5a9d0b2c532d66abe76b"
+    },
+    {
+      "Path": "vendor/firmware-tools/generate_v67.py",
+      "Sha256": "4b41e5199c6b9968d134c43a5a42d8127d094eebfe9dca78204be4d7c8237fd0"
+    },
+    {
+      "Path": "vendor/gpu-unlock-ada/aperture_compat.h",
+      "Sha256": "bfe14a3242d43c4115a6540c86b0424ba1d7f0b2750ef535556074d5de16f142"
+    },
+    {
+      "Path": "vendor/gpu-unlock-ada/arch_610.h",
+      "Sha256": "96272fde25bc23a74ed113a2fe1b6a3958ab91223ea0293cc2b0d88a39f7c2a5"
+    },
+    {
+      "Path": "vendor/gpu-unlock-ada/diagnostic.h",
+      "Sha256": "fce58df506620383e26f2523eeee354f5b73a8b48e385829b4900a924a77f521"
+    },
+    {
+      "Path": "vendor/gpu-unlock-ada/firmware_pins_610.h",
+      "Sha256": "82125d437e7c866e2583c4a93d77679d2ea72be3151f444afa16fd0342a221c8"
+    },
+    {
+      "Path": "vendor/gpu-unlock-ada/gfw_eval.c",
+      "Sha256": "5a36666290df66edc703611086a36adb148cdb953babf4529d114c9ef098e1b6"
+    },
+    {
+      "Path": "vendor/gpu-unlock-ada/gfw_eval.h",
+      "Sha256": "530ef704290d566bd4300a2036c07808d56214a814925349e0a1db926ede35ad"
+    },
+    {
+      "Path": "vendor/gpu-unlock-ada/layout_610.c",
+      "Sha256": "bde52cb4c22a16bb345fef9caaa1c6f15c19c674d6985fde98e9d4c518aca375"
+    },
+    {
+      "Path": "vendor/gpu-unlock-ada/layout_610.h",
+      "Sha256": "afe45505f455f7af90a9d1920b416301bfb7e4ff1778f4f7e10186084618bb5e"
+    },
+    {
+      "Path": "vendor/gpu-unlock-ada/main.c",
+      "Sha256": "cf42eb1b1e1f26f058511bdc31797cf875f6eeba2937b4f84c9243e8cad9d566"
+    },
+    {
+      "Path": "vendor/gpu-unlock-ada/prep_610.c",
+      "Sha256": "35e1c844f6fa40c387a1cda9ddfc29f67f256748df28d0a718d920ba4a8f61fa"
+    },
+    {
+      "Path": "vendor/gpu-unlock-ada/prep_610.h",
+      "Sha256": "47a7aa339b12fc67b99047b5c1666cd66bcba1bf7621cb5c0b9df9094cda2fa4"
+    },
+    {
+      "Path": "vendor/gpu-unlock-ada/unlock_610.c",
+      "Sha256": "a9c736d9a8ff27b14fae9831474fcbbc32365fb9ae4cbddc13efc6d3789b5c0b"
+    },
+    {
+      "Path": "vendor/gpu-unlock-ada/unlock_610.h",
+      "Sha256": "a734c6062aebbdcb331b61c2429764eb55b2350b0da2b4845669e966b0ee0370"
+    },
+    {
+      "Path": "vendor/gpu-unlock-ada/vbios_610.c",
+      "Sha256": "602a488ea200bbee67e90c600fda89cb6092d17709b314dbdf75b215f4a45253"
+    },
+    {
+      "Path": "vendor/gpu-unlock-ada/vbios_610.h",
+      "Sha256": "17990fa3a2464dbc1446ef5f349fe1486b39d9edf859ab1d8896857f65b3b7e0"
+    },
+    {
+      "Path": "vendor/gpu-unlock/diagnostic.h",
+      "Sha256": "1e5c397716b0e560d66d72e449186c521782ff4321034652709c370e00844128"
+    },
+    {
+      "Path": "vendor/gpu-unlock/gfw_eval.c",
+      "Sha256": "5a36666290df66edc703611086a36adb148cdb953babf4529d114c9ef098e1b6"
+    },
+    {
+      "Path": "vendor/gpu-unlock/gfw_eval.h",
+      "Sha256": "8c79837e0b17252365c0b3d7f8edb0dc845a2c94bfd9c165c3b095783fffbe00"
+    },
+    {
+      "Path": "vendor/gpu-unlock/layout_610.c",
+      "Sha256": "bde52cb4c22a16bb345fef9caaa1c6f15c19c674d6985fde98e9d4c518aca375"
+    },
+    {
+      "Path": "vendor/gpu-unlock/layout_610.h",
+      "Sha256": "afe45505f455f7af90a9d1920b416301bfb7e4ff1778f4f7e10186084618bb5e"
+    },
+    {
+      "Path": "vendor/gpu-unlock/prep_610.c",
+      "Sha256": "6ec01fd171f69f41712ec957a05b0bebf747c17d38ddb0b1ad432336ee7c09df"
+    },
+    {
+      "Path": "vendor/gpu-unlock/prep_610.h",
+      "Sha256": "e17bb535f46d1e4f0f581c7e2655d624541224f90f32743f5285886bac614d5f"
+    },
+    {
+      "Path": "vendor/gpu-unlock/unlock_610.c",
+      "Sha256": "b9535670fe3b15cb2f928d854eab4afdefc526aa88636f070ea34034dafc611c"
+    },
+    {
+      "Path": "vendor/gpu-unlock/unlock_610.h",
+      "Sha256": "9c6d4a30bd24f26b40fe43f5c136dbcf3a6751286532a48c8969c7c69700ef84"
+    },
+    {
+      "Path": "vendor/gpu-unlock/vbios_610.c",
+      "Sha256": "602a488ea200bbee67e90c600fda89cb6092d17709b314dbdf75b215f4a45253"
+    },
+    {
+      "Path": "vendor/gpu-unlock/vbios_610.h",
+      "Sha256": "17990fa3a2464dbc1446ef5f349fe1486b39d9edf859ab1d8896857f65b3b7e0"
+    },
+    {
+      "Path": "version.json",
+      "Sha256": "ca1091a5191861e250a291fdf90cfa48bfa5f9ff3a374e33ed370cb6245909af"
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "Subject": "CN=StarMoon",
+  "FriendlyName": "StarMoon EasyGPUUnlock Test Signing",
+  "KeyAlgorithm": "RSA",
+  "KeyLength": 3072,
+  "HashAlgorithm": "SHA256",
+  "LifetimeYears": 2
+}
